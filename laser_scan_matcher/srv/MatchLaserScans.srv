@@ -1,0 +1,4 @@
+sensor_msgs/LaserScan scan
+sensor_msgs/LaserScan alt_scan
+---
+float32 match_prob
