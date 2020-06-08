@@ -1,15 +1,35 @@
 #!/usr/bin/env python
-import rospy
 import numpy as np
 from sensor_msgs.msg import LaserScan
-from srv import MatchLaserScans, MatchLaserScansResponse
+from laser_scan_matcher.srv import MatchLaserScans, MatchLaserScansResponse
 import sys
 from os import path
 import torch
+import rospy
 
-# TODO fix this hack
-sys.path.append(path.dirname(path.dirname(path.dirname( path.dirname( path.abspath(__file__)  ) ) )))
-from helpers import create_laser_networks
+def create_laser_networks(model_dir, model_epoch):
+    scan_conv = ScanConvNet()
+    if model_dir:
+        scan_conv.load_state_dict(torch.load(os.path.join(model_dir, 'model_conv_' + model_epoch + '.pth')))
+
+    scan_transform = ScanTransformNet()
+    if model_dir:
+        scan_transform.load_state_dict(torch.load(os.path.join(model_dir, 'model_transform_' + model_epoch + '.pth')))
+
+    scan_match = ScanMatchNet()
+    if model_dir:
+        scan_match.load_state_dict(torch.load(os.path.join(model_dir, 'model_match_' + model_epoch + '.pth')))
+    
+    if torch.cuda.device_count() > 1:
+        print("Let's use", torch.cuda.device_count(), "GPUs!")
+        scan_conv = torch.nn.DataParallel(scan_conv)
+        scan_match = torch.nn.DataParallel(scan_match)
+        scan_transform = torch.nn.DataParallel(scan_transform)
+
+    scan_conv.cuda()
+    scan_match.cuda()
+    scan_transform.cuda()
+    return scan_conv, scan_match, scan_transform
 
 def create_scan_match_helper(scan_conv, scan_match):
   def match_scans(req):
