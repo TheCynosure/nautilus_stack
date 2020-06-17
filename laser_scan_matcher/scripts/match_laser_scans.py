@@ -1,26 +1,37 @@
 #!/usr/bin/env python
+import rospy
 import numpy as np
 from sensor_msgs.msg import LaserScan
 from laser_scan_matcher.srv import MatchLaserScans, MatchLaserScansResponse
 import sys
+import os
 from os import path
 import torch
-import rospy
 
-def create_laser_networks(model_dir, model_epoch):
+# TODO fix this hack
+sys.path.append(path.dirname(path.dirname(path.dirname( path.dirname( path.abspath(__file__)  ) ) )))
+sys.path.append(path.dirname(__file__))
+
+from model import FullNet, EmbeddingNet, LCCNet, DistanceNet, StructuredEmbeddingNet, ScanMatchNet, ScanConvNet, ScanTransformNet, ScanSingleConvNet, ScanUncertaintyNet
+
+def create_laser_networks(model_dir, model_epoch, multi_gpu=True):
     scan_conv = ScanConvNet()
     if model_dir:
         scan_conv.load_state_dict(torch.load(os.path.join(model_dir, 'model_conv_' + model_epoch + '.pth')))
 
     scan_transform = ScanTransformNet()
     if model_dir:
-        scan_transform.load_state_dict(torch.load(os.path.join(model_dir, 'model_transform_' + model_epoch + '.pth')))
+        transform_path = os.path.join(model_dir, 'model_transform_' + model_epoch + '.pth')
+        if os.path.exists(transform_path):
+            scan_transform.load_state_dict(torch.load(transform_path))
+        else:
+            print("Warning: no `transform` network found for provided model_dir and epoch")
 
     scan_match = ScanMatchNet()
     if model_dir:
         scan_match.load_state_dict(torch.load(os.path.join(model_dir, 'model_match_' + model_epoch + '.pth')))
     
-    if torch.cuda.device_count() > 1:
+    if multi_gpu and torch.cuda.device_count() > 1:
         print("Let's use", torch.cuda.device_count(), "GPUs!")
         scan_conv = torch.nn.DataParallel(scan_conv)
         scan_match = torch.nn.DataParallel(scan_match)

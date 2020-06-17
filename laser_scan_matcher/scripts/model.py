@@ -226,7 +226,7 @@ class LCCNet(nn.Module):
         return out
 
 class ScanTransformNet(nn.Module):
-    def __init__(self):
+    def __init__(self, scan_size=1081):
         super(ScanTransformNet, self).__init__()
 
         self.ff = nn.Sequential(
@@ -241,9 +241,27 @@ class ScanTransformNet(nn.Module):
 
     def forward(self, x):
         return self.ff(x).squeeze(1)
+        
 class ScanMatchNet(nn.Module):
     def __init__(self):
         super(ScanMatchNet, self).__init__()
+
+        self.ff = nn.Sequential(
+            nn.Linear(52 * 64, 1024),
+            nn.Dropout(p=0.3),
+            nn.Linear(1024, 1024),
+            nn.Dropout(p=0.3),
+            nn.Linear(1024, 512),
+            nn.Dropout(p=0.3),
+            nn.Linear(512, 2)
+        )
+
+    def forward(self, x):
+        return self.ff(x).squeeze(1)
+        
+class ScanUncertaintyNet(nn.Module):
+    def __init__(self):
+        super(ScanUncertaintyNet, self).__init__()
 
         self.ff = nn.Sequential(
             nn.Linear(52 * 64, 1024),
@@ -308,3 +326,54 @@ class ScanConvNet(nn.Module):
         output = conv.view(xy.shape[0], -1)
 
         return output
+
+class ScanSingleConvNet(nn.Module):
+    def __init__(self):
+        super(ScanSingleConvNet, self).__init__()
+
+        self.conv = nn.Conv1d(64, 64, 3, padding=1)
+        self.relu = nn.ReLU()
+        self.initialConv = nn.Sequential(
+            nn.Conv1d(1, 64, 7),
+            nn.MaxPool1d(kernel_size=1, stride=3)
+        )
+
+        self.avgPool = nn.AvgPool1d(1, 7)
+
+    def forward(self, x):
+        last_checkpoint = self.initialConv(x)
+
+        #First block
+        conv = self.conv(last_checkpoint)
+        conv = self.relu(conv)
+        conv = self.conv(conv)
+        conv = conv + last_checkpoint
+        last_checkpoint = self.relu(conv)
+
+        #Second block
+        conv = self.conv(last_checkpoint)
+        conv = self.relu(conv)
+        conv = self.conv(conv)
+        conv = conv + last_checkpoint
+        last_checkpoint = self.relu(conv)
+
+        #Third block
+        conv = self.conv(last_checkpoint)
+        conv = self.relu(conv)
+        conv = self.conv(conv)
+        conv = conv + last_checkpoint
+        last_checkpoint = self.relu(conv)
+
+        #Fourth block
+        conv = self.conv(last_checkpoint)
+        conv = self.relu(conv)
+        conv = self.conv(conv)
+        conv = conv * last_checkpoint
+        last_checkpoint = self.relu(conv)
+
+        conv = self.avgPool(conv)
+
+        output = conv.view(x.shape[0], -1)
+
+        return output
+        
