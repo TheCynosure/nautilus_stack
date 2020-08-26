@@ -10,3 +10,6 @@
 [submodule "rviz_hitl_slam_tool"]
 	path = rviz_hitl_slam_tool
 	url = git@github.com:ut-amrl/rviz_hitl_slam_tool.git
+[submodule "learning_loop_closure"]
+	path = learning_loop_closure
+	url = git@github.com:ut-amrl/learning-loop-closure.git

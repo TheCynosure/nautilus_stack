@@ -1,4 +1,0 @@
-sensor_msgs/LaserScan scan
----
-float32 condition_num
-float32 scale
