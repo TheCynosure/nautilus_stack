@@ -1,0 +1,18 @@
+<package>
+  <description brief="Point Cloud Embedder">
+    PyTorch network for creating fixed-length embeddings of 2D point clouds
+  </description>
+  <name>point_cloud_embedder</name>
+  <author>Kavan Sikand</author>
+  <license>MIT</license>
+  <review status="unreviewed" notes=""/>
+  <url></url>
+  <depend package="std_msgs"/>
+  <depend package="sensor_msgs"/>
+  
+  <build_depend>message_generation</build_depend>
+  <exec_depend>message_runtime</exec_depend>
+
+</package>
+
+

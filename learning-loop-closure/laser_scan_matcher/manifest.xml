@@ -1,0 +1,18 @@
+<package>
+  <description brief="Laser Scan Matcher">
+    PyTorch network for predicting whether 2 laser scans come from a nearby location
+  </description>
+  <name>laser_scan_matcher</name>
+  <author>Kavan Sikand</author>
+  <license>MIT</license>
+  <review status="unreviewed" notes=""/>
+  <url></url>
+  <depend package="std_msgs"/>
+  <depend package="sensor_msgs"/>
+  
+  <build_depend>message_generation</build_depend>
+  <exec_depend>message_runtime</exec_depend>
+
+</package>
+
+
