@@ -1,6 +1,6 @@
 [submodule "nautilus"]
 	path = nautilus
-	url = git@github.com:ut-amrl/nautilus.git
+  url = git@github.com:ut-amrl/nautilus.git
 [submodule "rviz_vectorize_button"]
 	path = rviz_vectorize_button
 	url = git@github.com:TheCynosure/rviz_vectorize_button.git
