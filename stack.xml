@@ -6,8 +6,7 @@
   <maintainer email="jbachman@umass.edu">Jack</maintainer>
   <author email="jbachman@umass.edu">Jack</author>
   <author email="kvsikand@utexas.edu">Kavan</author>
-  <license>TODO</license>
-  <review status="unreviewed" notes=""/>
+  <license>MIT</license>
   <url>https://thecynosure.github.io/nautilus_docs/</url>
   <depend stack="ros"/>
 </stack>
