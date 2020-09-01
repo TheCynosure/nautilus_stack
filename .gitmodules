@@ -1,15 +1,15 @@
 [submodule "nautilus"]
 	path = nautilus
-  url = git@github.com:ut-amrl/nautilus.git
+  url = https://github.com/ut-amrl/nautilus.git
 [submodule "rviz_vectorize_button"]
 	path = rviz_vectorize_button
-	url = git@github.com:TheCynosure/rviz_vectorize_button.git
+	url = https://github.com/TheCynosure/rviz_vectorize_button.git
 [submodule "rviz_write_button"]
 	path = rviz_write_button
-	url = git@github.com:TheCynosure/rviz_write_button.git
+	url = https://github.com/TheCynosure/rviz_write_button.git
 [submodule "rviz_hitl_slam_tool"]
 	path = rviz_hitl_slam_tool
-	url = git@github.com:ut-amrl/rviz_hitl_slam_tool.git
+	url = https://github.com/ut-amrl/rviz_hitl_slam_tool.git
 [submodule "learning_loop_closure"]
 	path = learning_loop_closure
-	url = git@github.com:ut-amrl/learning-loop-closure.git
+	url = https://github.com/ut-amrl/learning-loop-closure.git
