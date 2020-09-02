@@ -49,10 +49,27 @@ matrix:
   include:
   - name: "Xenial kinetic"
     dist: xenial
-    env: ROS_DISTRO=kinetic
+    env:
+      - ROS_DISTRO=kinetic
+      - MATRIX_EVAL="CC=gcc 9 && CXX=g++ 9" 
+    addons:
+      apt:
+        sources:
+          - ubuntu-toolchain-r-test
+        packages:
+          - g++ 9
   - name: "Focal noetic"
     dist: focal
-    env: ROS_DISTRO=noetic
+    env: 
+      - ROS_DISTRO=noetic
+      - MATRIX_EVAL="CC=gcc 9 && CXX=g++ 9" 
+    addons:
+      apt:
+        sources:
+          - ubuntu-toolchain-r-test
+        packages:
+          - g++ 9
+  
 
 # Configuration variables. All variables are global now, but this can be used to
 # trigger a build matrix for different ROS distributions if desired.
