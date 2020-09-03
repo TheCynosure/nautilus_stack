@@ -51,24 +51,24 @@ matrix:
     dist: xenial
     env:
       - ROS_DISTRO=kinetic
-      - MATRIX_EVAL="CC=gcc 9 && CXX=g++ 9" 
+      - MATRIX_EVAL="CC=gcc-9 && CXX=g++-9" 
     addons:
       apt:
         sources:
           - ubuntu-toolchain-r-test
         packages:
-          - g++ 9
+          - gcc-9
   - name: "Focal noetic"
     dist: focal
     env: 
       - ROS_DISTRO=noetic
-      - MATRIX_EVAL="CC=gcc 9 && CXX=g++ 9" 
+      - MATRIX_EVAL="CC=gcc-9 && CXX=g++-9" 
     addons:
       apt:
         sources:
           - ubuntu-toolchain-r-test
         packages:
-          - g++ 9
+          - gcc-9
   
 
 # Configuration variables. All variables are global now, but this can be used to
