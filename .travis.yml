@@ -114,7 +114,7 @@ install:
   # Create the devel/setup.bash (run catkin_make with an empty workspace) and
   # source it to set the path variables.
   - cd ~/catkin_ws
-  - catkin_make
+    # catkin_make
   - source devel/setup.bash
   # Add the package under integration to the workspace using a symlink.
   - cd ~/catkin_ws/src
@@ -146,6 +146,6 @@ script:
   - cd ~/catkin_ws/src/nautilus_stack/nautilus
   - sudo ./install_ubuntu.sh
   - cd ../../..
-  - catkin_make
+  - catkin_make -DCMAKE_C_COMPILER=gcc-9 -DCMAKE_CXX_COMPILER=gcc-9
   # Run the tests, ensuring the path is set correctly.
   - source devel/setup.bash
