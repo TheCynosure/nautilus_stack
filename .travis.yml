@@ -69,6 +69,8 @@ matrix:
           - ubuntu-toolchain-r-test
         packages:
           - gcc-9
+          - g++
+          - gcc
   
 
 # Configuration variables. All variables are global now, but this can be used to
