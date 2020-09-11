@@ -1,0 +1,5 @@
+
+
+1599777886.801514190  Node Startup
+1599777887.514835664 INFO /rviz [/tmp/binarydeb/ros-noetic-rviz-1.14.1/src/rviz/ogre_helpers/render_system.cpp:454(RenderWindow* rviz::RenderSystem::makeRenderWindow)] [topics: /rosout] Stereo is NOT SUPPORTED
+1599777887.514973743 INFO /rviz [/tmp/binarydeb/ros-noetic-rviz-1.14.1/src/rviz/ogre_helpers/render_system.cpp:214(RenderSystem::detectGlVersion)] [topics: /rosout] OpenGl version: 4.6 (GLSL 4.6).

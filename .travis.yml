@@ -58,6 +58,7 @@ matrix:
           - ubuntu-toolchain-r-test
         packages:
           - gcc-9
+          - g++-9
   - name: "Focal noetic"
     dist: focal
     env: 

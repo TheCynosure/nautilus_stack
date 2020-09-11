@@ -1,0 +1,36 @@
+[rosmaster.main][INFO] 2020-09-10 18:23:35,382: initialization complete, waiting for shutdown
+[rosmaster.main][INFO] 2020-09-10 18:23:35,382: Starting ROS Master Node
+[xmlrpc][INFO] 2020-09-10 18:23:35,383: XML-RPC server binding to 0.0.0.0:11311
+[xmlrpc][INFO] 2020-09-10 18:23:35,383: Started XML-RPC server [http://Nautilus:11311/]
+[xmlrpc][INFO] 2020-09-10 18:23:35,383: xml rpc node: starting XML-RPC server
+[rosmaster.master][INFO] 2020-09-10 18:23:35,383: Master initialized: port[11311], uri[http://Nautilus:11311/]
+[rosmaster.master][INFO] 2020-09-10 18:23:35,483: +PARAM [/run_id] by /roslaunch
+[rosmaster.master][INFO] 2020-09-10 18:23:35,485: +PARAM [/roslaunch/uris/host_nautilus__38193] by /roslaunch
+[rosmaster.master][INFO] 2020-09-10 18:23:35,515: +PARAM [/rosversion] by /roslaunch
+[rosmaster.master][INFO] 2020-09-10 18:23:35,516: +PARAM [/rosdistro] by /roslaunch
+[rosmaster.master][INFO] 2020-09-10 18:23:35,521: +SERVICE [/rosout/get_loggers] /rosout http://Nautilus:44991/
+[rosmaster.master][INFO] 2020-09-10 18:23:35,522: +SERVICE [/rosout/set_logger_level] /rosout http://Nautilus:44991/
+[rosmaster.master][INFO] 2020-09-10 18:23:35,522: +PUB [/rosout_agg] /rosout http://Nautilus:44991/
+[rosmaster.master][INFO] 2020-09-10 18:23:35,523: +SUB [/rosout] /rosout http://Nautilus:44991/
+[rosmaster.master][INFO] 2020-09-10 18:23:35,557: +PUB [/rosout] /nautilus http://Nautilus:38533/
+[rosmaster.master][INFO] 2020-09-10 18:23:35,558: +SERVICE [/nautilus/get_loggers] /nautilus http://Nautilus:38533/
+[rosmaster.master][INFO] 2020-09-10 18:23:35,558: +SERVICE [/nautilus/set_logger_level] /nautilus http://Nautilus:38533/
+[rosmaster.master][INFO] 2020-09-10 18:23:35,584: publisherUpdate[/rosout] -> http://Nautilus:44991/ ['http://Nautilus:38533/']
+[rosmaster.master][INFO] 2020-09-10 18:23:35,586: publisherUpdate[/rosout] -> http://Nautilus:44991/ ['http://Nautilus:38533/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2020-09-10 18:23:35,645: +PUB [/rosout] /rviz http://Nautilus:34515/
+[rosmaster.master][INFO] 2020-09-10 18:23:35,645: +SERVICE [/rviz/get_loggers] /rviz http://Nautilus:34515/
+[rosmaster.master][INFO] 2020-09-10 18:23:35,645: +SERVICE [/rviz/set_logger_level] /rviz http://Nautilus:34515/
+[rosmaster.master][INFO] 2020-09-10 18:23:35,686: publisherUpdate[/rosout] -> http://Nautilus:44991/ ['http://Nautilus:38533/', 'http://Nautilus:34515/']
+[rosmaster.master][INFO] 2020-09-10 18:23:35,686: publisherUpdate[/rosout] -> http://Nautilus:44991/ ['http://Nautilus:38533/', 'http://Nautilus:34515/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2020-09-10 18:23:35,951: -PUB [/rosout] /rviz http://Nautilus:34515/
+[rosmaster.master][INFO] 2020-09-10 18:23:35,951: -SERVICE [/rviz/get_loggers] /rviz rosrpc://Nautilus:51039
+[rosmaster.master][INFO] 2020-09-10 18:23:35,952: -SERVICE [/rviz/set_logger_level] /rviz rosrpc://Nautilus:51039
+[rosmaster.master][INFO] 2020-09-10 18:23:35,986: publisherUpdate[/rosout] -> http://Nautilus:44991/ ['http://Nautilus:38533/']
+[rosmaster.master][INFO] 2020-09-10 18:23:35,987: publisherUpdate[/rosout] -> http://Nautilus:44991/ ['http://Nautilus:38533/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2020-09-10 18:23:36,788: -PUB [/rosout_agg] /rosout http://Nautilus:44991/
+[rosmaster.master][INFO] 2020-09-10 18:23:36,789: -SUB [/rosout] /rosout http://Nautilus:44991/
+[rosmaster.master][INFO] 2020-09-10 18:23:36,789: -SERVICE [/rosout/get_loggers] /rosout rosrpc://Nautilus:46163
+[rosmaster.master][INFO] 2020-09-10 18:23:36,789: -SERVICE [/rosout/set_logger_level] /rosout rosrpc://Nautilus:46163
+[rosmaster.main][INFO] 2020-09-10 18:23:36,865: keyboard interrupt, will exit
+[rosmaster.main][INFO] 2020-09-10 18:23:36,866: stopping master...
+[rospy.core][INFO] 2020-09-10 18:23:36,866: signal_shutdown [atexit]
