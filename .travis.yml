@@ -47,8 +47,8 @@ cache:
 language: generic
 matrix:
   include:
-  - name: "Xenial kinetic"
-    dist: xenial
+  - name: "Bionic kinetic"
+    dist: bionic
     env:
       - ROS_DISTRO=kinetic
       - MATRIX_EVAL="CC=gcc-9 && CXX=g++-9" 
