@@ -47,10 +47,10 @@ cache:
 language: generic
 matrix:
   include:
-  - name: "Bionic kinetic"
+  - name: "Bionic Melodic"
     dist: bionic
     env:
-      - ROS_DISTRO=kinetic
+      - ROS_DISTRO=melodic
       - MATRIX_EVAL="CC=gcc-9 && CXX=g++-9" 
     addons:
       apt:
