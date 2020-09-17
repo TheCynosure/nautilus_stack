@@ -146,7 +146,7 @@ script:
   - source /opt/ros/$ROS_DISTRO/setup.bash
   # Install the nautilus dependencies
   - cd ~/catkin_ws/src/nautilus_stack/nautilus
-  - sudo ./install_ubuntu.sh
+  - travis_wait sudo ./install_ubuntu.sh
   - cd ../../..
   - catkin_make -DCMAKE_C_COMPILER=gcc-9 -DCMAKE_CXX_COMPILER=gcc-9
   # Run the tests, ensuring the path is set correctly.
