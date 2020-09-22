@@ -4,49 +4,18 @@ import numpy as np
 from sensor_msgs.msg import LaserScan
 from laser_scan_matcher.srv import MatchLaserScans, MatchLaserScansResponse
 import sys
-import os
 from os import path
 import torch
 
 # TODO fix this hack
-sys.path.append(path.dirname(path.dirname(path.dirname( path.dirname( path.abspath(__file__)  ) ) )))
-sys.path.append(path.dirname(__file__))
-
-from model import FullNet, EmbeddingNet, LCCNet, DistanceNet, StructuredEmbeddingNet, ScanMatchNet, ScanConvNet, ScanTransformNet, ScanSingleConvNet, ScanUncertaintyNet
-
-def create_laser_networks(model_dir, model_epoch, multi_gpu=True):
-    scan_conv = ScanConvNet()
-    if model_dir:
-        scan_conv.load_state_dict(torch.load(os.path.join(model_dir, 'model_conv_' + model_epoch + '.pth')))
-
-    scan_transform = ScanTransformNet()
-    if model_dir:
-        transform_path = os.path.join(model_dir, 'model_transform_' + model_epoch + '.pth')
-        if os.path.exists(transform_path):
-            scan_transform.load_state_dict(torch.load(transform_path))
-        else:
-            print("Warning: no `transform` network found for provided model_dir and epoch")
-
-    scan_match = ScanMatchNet()
-    if model_dir:
-        scan_match.load_state_dict(torch.load(os.path.join(model_dir, 'model_match_' + model_epoch + '.pth')))
-    
-    if multi_gpu and torch.cuda.device_count() > 1:
-        print("Let's use", torch.cuda.device_count(), "GPUs!")
-        scan_conv = torch.nn.DataParallel(scan_conv)
-        scan_match = torch.nn.DataParallel(scan_match)
-        scan_transform = torch.nn.DataParallel(scan_transform)
-
-    scan_conv.cuda()
-    scan_match.cuda()
-    scan_transform.cuda()
-    return scan_conv, scan_match, scan_transform
+sys.path.append(path.join(path.dirname(path.dirname(path.dirname(path.abspath(__file__)))), 'learning_loop_closure'))
+from helpers import create_laser_networks
 
 def create_scan_match_helper(scan_conv, scan_match):
   def match_scans(req):
     
-    scan_np = np.array(req.scan.ranges).astype(np.float32)
-    alt_scan_np = np.array(req.alt_scan.ranges).astype(np.float32)
+    scan_np = np.minimum(np.array(req.scan.ranges).astype(np.float32), 30)
+    alt_scan_np = np.minimum(np.array(req.alt_scan.ranges).astype(np.float32), 30)
     
     scan = torch.tensor(scan_np).cuda()
     alt_scan = torch.tensor(alt_scan_np).cuda()

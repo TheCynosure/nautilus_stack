@@ -1,0 +1,18 @@
+<package>
+  <description brief="Local Uncertainty Estimatorr">
+    PyTorch network for predicting the local uncertainty of a given scan
+  </description>
+  <name>local_uncertainty_estimator</name>
+  <author>Kavan Sikand</author>
+  <license>MIT</license>
+  <review status="unreviewed" notes=""/>
+  <url></url>
+  <depend package="std_msgs"/>
+  <depend package="sensor_msgs"/>
+  
+  <build_depend>message_generation</build_depend>
+  <exec_depend>message_runtime</exec_depend>
+
+</package>
+
+
