@@ -1,0 +1,17 @@
+{
+  "id": "write_config",
+  "title": "Write your own Config",
+  "description": "### Pre-requisites",
+  "source": "@site/docs/write_config.mdx",
+  "permalink": "/nautilus_docs/docs/write_config",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/write_config.mdx",
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "Generate a Vector Map",
+    "permalink": "/nautilus_docs/docs/vectorize"
+  },
+  "next": {
+    "title": "Config Parameters",
+    "permalink": "/nautilus_docs/docs/config_params"
+  }
+}

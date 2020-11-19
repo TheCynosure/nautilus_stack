@@ -1,0 +1,13 @@
+{
+  "id": "getting_started",
+  "title": "Getting Started",
+  "description": ":::note",
+  "source": "@site/docs/getting_started.md",
+  "permalink": "/nautilus_docs/docs/getting_started",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/getting_started.md",
+  "sidebar": "sidebar",
+  "next": {
+    "title": "Installing Nautilus",
+    "permalink": "/nautilus_docs/docs/install_nautilus"
+  }
+}

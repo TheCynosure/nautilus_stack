@@ -1,0 +1,17 @@
+{
+  "id": "vectorize",
+  "title": "Generate a Vector Map",
+  "description": "Once you have produced a map, you might want to vectorize the pointcloud to get a vector map. This is a map with lines that represent the original map.",
+  "source": "@site/docs/vectorize.mdx",
+  "permalink": "/nautilus_docs/docs/vectorize",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/vectorize.mdx",
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "Run Nautilus without Autonomous Loop Closure",
+    "permalink": "/nautilus_docs/docs/run_nautilus"
+  },
+  "next": {
+    "title": "Write your own Config",
+    "permalink": "/nautilus_docs/docs/write_config"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "permalink": "/nautilus_docs/blog/hello-world",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/blog/blog/2019-05-29-hello-world.md",
+  "source": "@site/blog/2019-05-29-hello-world.md",
+  "description": "Welcome to this blog. This blog is created with [**Docusaurus 2 alpha**](https://v2.docusaurus.io/).",
+  "date": "2019-05-29T00:00:00.000Z",
+  "tags": [
+    {
+      "label": "hello",
+      "permalink": "/nautilus_docs/blog/tags/hello"
+    },
+    {
+      "label": "docusaurus",
+      "permalink": "/nautilus_docs/blog/tags/docusaurus"
+    }
+  ],
+  "title": "Hello",
+  "readingTime": 0.12,
+  "truncated": true,
+  "prevItem": {
+    "title": "Welcome",
+    "permalink": "/nautilus_docs/blog/welcome"
+  },
+  "nextItem": {
+    "title": "Hola",
+    "permalink": "/nautilus_docs/blog/hola"
+  }
+}

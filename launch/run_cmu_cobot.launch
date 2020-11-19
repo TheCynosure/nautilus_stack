@@ -1,0 +1,5 @@
+<launch>
+  <node name="nautilus" pkg="nautilus" type="nautilus" args="--config_file=$(find nautilus)/config/cmu_cobot_config.lua" required="true" output="screen"/>
+  <node name="laser_scan_matcher" pkg="laser_scan_matcher" type="match_laser_scans.py" args="$(find laser_scan_matcher)/models/ 44"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find nautilus)/slam_debug.rviz" />
+</launch>

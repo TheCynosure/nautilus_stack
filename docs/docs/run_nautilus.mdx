@@ -1,0 +1,36 @@
+---
+id: run_nautilus
+title: Run Nautilus without Autonomous Loop Closure
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+For this tutorial we will be using the [bag file here](https://drive.google.com/open?id=1thDp4MJF6l2yZ9Z_JFAmdhMQZrld0oQ5). Download it and put it in ```<catkin_workspace_path>/src/nautilus_stack/nautilus/data```. You will have to create this folder.
+
+```
+cd <catkin_workspace_path>/src/nautilus_stack/nautilus
+mkdir data
+mv ~/Downloads/<bag_file_name> data/
+```
+
+Now this bag file already has a launch file and config created for it, so from the catkin root we can just run it like so:
+
+```
+cd <catkin_workspace_path>
+roslaunch src/nautilus_stack/launch/run_stack.launch
+```
+
+You should see RViz open and soon after the pointclouds from the bag file will appear in the window. Once the program prints ```Waiting for Loop Closure input.``` you can begin to fix any errors that it may have made. For example here is what the LRGC Bag looks like after running through the initial optimization.
+
+<img alt="Nautilus Pre-Loop Closure" src={useBaseUrl('img/LGRC_Nautilus.png')}/>
+
+We can see this isn't perfect, the hallway on the left side is still not connected totally. To fix this we are going to use the Human in the Loop tool offered in nautilus. Click the "Hitl Slam Tool" Button that should be on your RViz toolbar. It looks like this:
+
+<img alt="HITL Button" src={useBaseUrl('img/HITL_slam_button.png')}/>
+
+After clicking that you will **not** be able to move your camera. You can hit ESC to cancel the operation to get your camera into a better position if needed. From here you will have to draw two lines on the points that are supposed to be in the same place. This allows nautilus to slide the walls along each other until they are correct.
+
+After you do that you should see something like this as the final results:
+
+<img alt="Nautilus Post-Loop Closure" src={useBaseUrl('img/LGRC_Nautilus_Finished.png')}/>
+

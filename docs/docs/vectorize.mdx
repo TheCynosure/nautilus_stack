@@ -1,0 +1,31 @@
+---
+id: vectorize
+title: Generate a Vector Map
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+Once you have produced a map, you might want to vectorize the pointcloud to get a vector map. This is a map with lines that represent the original map.
+
+Once you have run nautilus and have a map that you are satisfied with, like from the [tutorial here](run_nautilus.mdx) than you can click the vectorize button on the RViz toolbar. This will begin vectorization (**please only click the button once until it is done for right now, thanks**). Eventually the output will be broadcast to the visualizer and it will look something like this:
+
+<img alt="Vector Map" src={useBaseUrl('img/VectorizationFinished.png')}/>
+
+
+### Capturing in a Bag
+
+But, you may also want to capture this output. To capture the outputted vector map in a bag file use the following command in another terminal window or tab.
+
+```
+rosbag record /debug_lines
+```
+
+Then after the vector map shows up in RViz you can kill the rosbag record command with Ctrl-C.
+
+### Capturing in a text file
+
+You can also output to a text file the endpoints of every line. To do this set the following parameter in your config file that you are using:
+
+```
+map_output_file="<path_to_file_to_write>"
+```

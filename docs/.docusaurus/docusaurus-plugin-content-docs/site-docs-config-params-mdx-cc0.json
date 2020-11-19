@@ -1,0 +1,13 @@
+{
+  "id": "config_params",
+  "title": "Config Parameters",
+  "description": "### General",
+  "source": "@site/docs/config_params.mdx",
+  "permalink": "/nautilus_docs/docs/config_params",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/config_params.mdx",
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "Write your own Config",
+    "permalink": "/nautilus_docs/docs/write_config"
+  }
+}

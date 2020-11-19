@@ -1,0 +1,17 @@
+{
+  "id": "run_nautilus",
+  "title": "Run Nautilus without Autonomous Loop Closure",
+  "description": "For this tutorial we will be using the [bag file here](https://drive.google.com/open?id=1thDp4MJF6l2yZ9Z_JFAmdhMQZrld0oQ5). Download it and put it in ```<catkin_workspace_path>/src/nautilus_stack/nautilus/data```. You will have to create this folder.",
+  "source": "@site/docs/run_nautilus.mdx",
+  "permalink": "/nautilus_docs/docs/run_nautilus",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/run_nautilus.mdx",
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "Installing Nautilus",
+    "permalink": "/nautilus_docs/docs/install_nautilus"
+  },
+  "next": {
+    "title": "Generate a Vector Map",
+    "permalink": "/nautilus_docs/docs/vectorize"
+  }
+}

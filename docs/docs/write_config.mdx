@@ -1,0 +1,117 @@
+---
+id: write_config
+title: Write your own Config
+---
+
+### Pre-requisites
+
+If you want to run your own data through nautilus you most likely will need to write a small config file with the parameters to use for you specific bag file.
+
+**Before you start you will need to have these things:**
+1. A ROS Bag file, you can learn more about [ROS Bag files here](http://wiki.ros.org/Bags).
+2. Your bag should have Odometry and LiDAR Topics (If you are unsure, use the next section to see if they exist in your Bag file).
+
+### Finding topic names
+
+First you will need to get the LiDAR and Odometry topic names from your bag. You can use the ```rosbag info``` command for this. Here is the output for the LGRC Bag used in the [tutorial to get nautilus running](run_nautilus.mdx), you can find the [bag here](https://drive.google.com/open?id=1thDp4MJF6l2yZ9Z_JFAmdhMQZrld0oQ5).
+
+```
+> rosbag info data/00010_2019-05-16-03-59-04_0.bag
+path:        data/00010_2019-05-16-03-59-04_0.bag
+version:     2.0
+duration:    2:24s (144s)
+start:       Aug 07 2019 18:53:39.02 (1565218419.02)
+end:         Aug 07 2019 18:56:03.08 (1565218563.08)
+size:        1.5 GB
+messages:    88266
+compression: none [1367/1367 chunks]
+types:       cobot_msgs/LocalizationMsg              [d97acce230cd4cd8961fb0e1730022b9]
+             dynamic_reconfigure/Config              [958f16a05573709014982821e6822580]
+             dynamic_reconfigure/ConfigDescription   [757ce9d44ba8ddd801bb30bc456f946f]
+             geometry_msgs/Twist                     [9f195f881246fdfa2798d1d3eebca84a]
+             geometry_msgs/TwistStamped              [98d34b0043a2093cf9d9345ab6eef12e]
+             geometry_msgs/Vector3Stamped            [7b324c7325e683bf02a9b14b01090ec7]
+             jackal_msgs/Drive                       [601cf097cd47c174590c366c6ddd5fb3]
+             jackal_msgs/Feedback                    [3bdabb0ef46338ee5672d1b82220ab49]
+             multi_model_control_native/DriveStamped [3c1ca058b9dc17aff4cfac0c666ed6d1]
+             nav_msgs/Odometry                       [cd5e73d190d741a2f92e81eda573aca7]
+             nmea_msgs/Sentence                      [9f221efc5f4b3bac7ce4af102b32308b]
+             rosgraph_msgs/Log                       [acffd30cd6b6de30f120938c17c593fb]
+             sensor_msgs/CompressedImage             [8f7a12909da2c9d3332d540a0977563f]
+             sensor_msgs/Imu                         [6a62c6daae103f4ff57a132d6f95cec2]
+             sensor_msgs/LaserScan                   [90c7ef2dc6895d81024acba2ac42f369]
+             sensor_msgs/NavSatFix                   [2d3a8cd499b9b4a0249fb98fd05cfa48]
+             sensor_msgs/PointCloud2                 [1158d486dd51d683ce2f1be655c3c181]
+             sensor_msgs/TimeReference               [fded64a0265108ba86c3d38fb11c0c16]
+topics:      /cmd_drive                                                  6890 msgs    : jackal_msgs/Drive                      
+             /cmd_drive_stamped                                          6890 msgs    : multi_model_control_native/DriveStamped
+             /cmd_vel                                                    6576 msgs    : geometry_msgs/Twist                    
+             /cmd_vel_stamped                                            6573 msgs    : geometry_msgs/TwistStamped             
+             /feedback                                                   2753 msgs    : jackal_msgs/Feedback                   
+             /imu/data                                                   9963 msgs    : sensor_msgs/Imu                        
+             /imu/data_raw                                               9970 msgs    : sensor_msgs/Imu                        
+             /imu/mag                                                    9963 msgs    : geometry_msgs/Vector3Stamped           
+             /navsat/fix                                                 1379 msgs    : sensor_msgs/NavSatFix                  
+             /navsat/nmea_sentence                                       5214 msgs    : nmea_msgs/Sentence                     
+             /navsat/time_reference                                      1379 msgs    : sensor_msgs/TimeReference              
+             /odometry/filtered                                          6889 msgs    : nav_msgs/Odometry                      
+             /odometry/raw                                               2755 msgs    : nav_msgs/Odometry                      
+             /rosout                                                       29 msgs    : rosgraph_msgs/Log                       (3 connections)
+             /rosout_agg                                                   25 msgs    : rosgraph_msgs/Log                      
+             /set_location                                                  1 msg     : cobot_msgs/LocalizationMsg             
+             /stereo/left/image_raw/compressed                           4140 msgs    : sensor_msgs/CompressedImage            
+             /stereo/left/image_raw/compressed/parameter_descriptions       1 msg     : dynamic_reconfigure/ConfigDescription  
+             /stereo/left/image_raw/compressed/parameter_updates            1 msg     : dynamic_reconfigure/Config             
+             /stereo/right/image_raw/compressed                          4140 msgs    : sensor_msgs/CompressedImage            
+             /stereo/right/image_raw/compressed/parameter_descriptions      1 msg     : dynamic_reconfigure/ConfigDescription  
+             /stereo/right/image_raw/compressed/parameter_updates           1 msg     : dynamic_reconfigure/Config             
+             /velodyne_2dscan_high_beams                                 1367 msgs    : sensor_msgs/LaserScan                  
+             /velodyne_points                                            1366 msgs    : sensor_msgs/PointCloud2
+```
+
+There is a lot of output here, but all we care about is the final section named "topics". We then need an odometry message of the type ```nav_msgs/Odometry``` and a LiDAR message of type ```sensor_msgs/LaserScan```. As long as you have two topics with both of these types of messages (listed after the colon on the right) you can run your data with nautilus! 
+
+The topics we need are "/odometry/raw" for odometry, and "/velodyne_2dscan_high_beams" for LiDAR.
+
+:::info
+If you are using CobotOdometry messages, they are differential odometry and need to set the ```differential_odom=true``` parameter to your config file. You can specify the path still using the ```lidar_path``` config parameter like below.
+:::
+
+Now we will create a new config file in the config folder:
+
+```
+touch myconfig.lua
+```
+
+### Inside Your new Config:
+
+Now, we don't want to have to redefine all the different configuration parameters needed by nautilus, so we will add this line to the top of our config file so that the defaults will be loaded, and anything we don't overwrite will have it's default value.
+
+```
+dofile(debug.getinfo(1).source:match("@?(.*/)") .. '/default_config.lua')
+```
+
+Then we need to specify where our bag is:
+
+```
+bag_path="<path_to_bag_relative_to_nautilus_repository_root>"
+```
+
+Then we need to specify those topics that we found earlier:
+
+```
+lidar_topic="<lidar_topic_name_from_before>"
+odom_topic="<odometry_topic_name_from_before>"
+```
+
+Finally, we should add the number of poses to process. The default is 30 poses, which is a very small number. I am going to guess for my bag file and say that there is 450 poses that I want to process. If you just want to process the entire bag file then set this parameter to a large number.
+
+```
+pose_number=450
+```
+
+Now you have written the config file you can run it through nautilus as follows:
+
+```
+./bin/nautilus --config_file config/myconfig.lua
+```

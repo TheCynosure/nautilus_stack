@@ -1,0 +1,4 @@
+<launch>
+  <node name="ft_test" pkg="nautilus" type="ft_test" args="--config_file=$(find nautilus)/config/lgrc_bag_config.lua" required="true" output="screen"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find nautilus)/slam_debug.rviz" />
+</launch>
