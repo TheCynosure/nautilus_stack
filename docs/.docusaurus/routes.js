@@ -94,6 +94,12 @@ export default [
   
 },
 {
+  path: '/nautilus_docs/docs/running_example_bags',
+  component: ComponentCreator('/nautilus_docs/docs/running_example_bags'),
+  exact: true,
+  
+},
+{
   path: '/nautilus_docs/docs/vectorize',
   component: ComponentCreator('/nautilus_docs/docs/vectorize'),
   exact: true,

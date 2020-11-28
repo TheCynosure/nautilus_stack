@@ -1,0 +1,17 @@
+{
+  "id": "running_example_bags",
+  "title": "Running Example Bags",
+  "description": "Here is a collection of example bags and how to run them and the expected results you should get after the initial optimization using Nautilus. Good luck!",
+  "source": "@site/docs/running_example_bags.mdx",
+  "permalink": "/nautilus_docs/docs/running_example_bags",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/running_example_bags.mdx",
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "Write your own Config",
+    "permalink": "/nautilus_docs/docs/write_config"
+  },
+  "next": {
+    "title": "Config Parameters",
+    "permalink": "/nautilus_docs/docs/config_params"
+  }
+}

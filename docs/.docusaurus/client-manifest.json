@@ -12,9 +12,9 @@
       8,
       16,
       20,
-      23,
-      25,
-      32,
+      24,
+      26,
+      33,
       1
     ],
     "2": [
@@ -25,9 +25,9 @@
       8,
       16,
       20,
-      23,
-      25,
-      32,
+      24,
+      26,
+      33,
       2
     ],
     "3": [
@@ -37,7 +37,7 @@
       8,
       16,
       20,
-      25,
+      26,
       3
     ],
     "styles": [
@@ -49,11 +49,11 @@
       8,
       16,
       20,
-      23,
-      25,
-      30,
+      24,
+      26,
       31,
       32,
+      33,
       0
     ],
     "@theme/BlogTagsListPage": [
@@ -84,7 +84,7 @@
       0,
       1,
       2,
-      32
+      33
     ],
     "@site/blog/2019-05-30-welcome.md": [
       9
@@ -130,49 +130,52 @@
       3,
       20
     ],
-    "@site/blog/2019-05-30-welcome.md?truncated=true": [
+    "@site/docs/running_example_bags.mdx": [
       21
     ],
-    "@site/blog/2019-05-28-hola.md": [
+    "@site/blog/2019-05-30-welcome.md?truncated=true": [
       22
+    ],
+    "@site/blog/2019-05-28-hola.md": [
+      23
     ],
     "@site/src/pages/index.js": [
       0,
       1,
       2,
-      23
+      24
     ],
     "@site/docs/config_params.mdx": [
-      24
+      25
     ],
     "@theme/BlogPostPage": [
       0,
       1,
       2,
       3,
-      25
-    ],
-    "@site/docs/run_nautilus.mdx": [
       26
     ],
-    "@site/blog/2019-05-29-hello-world.md": [
+    "@site/docs/run_nautilus.mdx": [
       27
     ],
-    "@site/docs/vectorize.mdx": [
+    "@site/blog/2019-05-29-hello-world.md": [
       28
     ],
-    "~blog/nautilus-docs-blog-tags-facebook-b01.json": [
+    "@site/docs/vectorize.mdx": [
       29
+    ],
+    "~blog/nautilus-docs-blog-tags-facebook-b01.json": [
+      30
     ],
     "main": [
       0,
-      31,
-      30
+      32,
+      31
     ],
     "runtime~main": [
       0,
-      30,
-      31
+      31,
+      32
     ]
   },
   "assets": {
@@ -180,303 +183,312 @@
       "css": [
         {
           "file": "styles.2ad8f894.css",
-          "hash": "fe5e0f8da33d7ca57c3b",
+          "hash": "287073ce8c28d5100843",
           "publicPath": "/nautilus_docs/styles.2ad8f894.css"
         }
       ],
       "js": [
         {
-          "file": "styles.dfc29e97.js",
-          "hash": "fe5e0f8da33d7ca57c3b",
-          "publicPath": "/nautilus_docs/styles.dfc29e97.js"
+          "file": "styles.1ef6f9b4.js",
+          "hash": "287073ce8c28d5100843",
+          "publicPath": "/nautilus_docs/styles.1ef6f9b4.js"
         }
       ]
     },
     "1": {
       "js": [
         {
-          "file": "1.dd2542e7.js",
-          "hash": "e51b5d42035c3c2d1e08",
-          "publicPath": "/nautilus_docs/1.dd2542e7.js"
+          "file": "1.f5a40f8a.js",
+          "hash": "fb892001f5b39945ca4c",
+          "publicPath": "/nautilus_docs/1.f5a40f8a.js"
         }
       ]
     },
     "2": {
       "js": [
         {
-          "file": "2.5f7d7de4.js",
-          "hash": "27b1f9604d57b24de60d",
-          "publicPath": "/nautilus_docs/2.5f7d7de4.js"
+          "file": "2.a595be99.js",
+          "hash": "40737e8fdf67df2e6523",
+          "publicPath": "/nautilus_docs/2.a595be99.js"
         }
       ]
     },
     "3": {
       "js": [
         {
-          "file": "3.996e5af0.js",
-          "hash": "656b074c0e49c0fad8cb",
-          "publicPath": "/nautilus_docs/3.996e5af0.js"
+          "file": "3.4ef66627.js",
+          "hash": "e2412ceaed25e21db459",
+          "publicPath": "/nautilus_docs/3.4ef66627.js"
         }
       ]
     },
     "4": {
       "js": [
         {
-          "file": "01a85c17.ce593249.js",
-          "hash": "23e610015d370681a705",
-          "publicPath": "/nautilus_docs/01a85c17.ce593249.js"
+          "file": "01a85c17.dfcb9410.js",
+          "hash": "16ff89e713d0a582a1d5",
+          "publicPath": "/nautilus_docs/01a85c17.dfcb9410.js"
         }
       ]
     },
     "5": {
       "js": [
         {
-          "file": "0381f6f8.a48b5f75.js",
-          "hash": "697fc86b075eb175bdb5",
-          "publicPath": "/nautilus_docs/0381f6f8.a48b5f75.js"
+          "file": "0381f6f8.a3b81393.js",
+          "hash": "45fc38d556d6c61d5b15",
+          "publicPath": "/nautilus_docs/0381f6f8.a3b81393.js"
         }
       ]
     },
     "6": {
       "js": [
         {
-          "file": "0a0b21dd.5dced310.js",
-          "hash": "29b74416cbb49744bb4e",
-          "publicPath": "/nautilus_docs/0a0b21dd.5dced310.js"
+          "file": "0a0b21dd.d6afd8f0.js",
+          "hash": "c45d380e6e83834c6be5",
+          "publicPath": "/nautilus_docs/0a0b21dd.d6afd8f0.js"
         }
       ]
     },
     "7": {
       "js": [
         {
-          "file": "17896441.1f866e35.js",
-          "hash": "027c4abe1a0b0d1d65cc",
-          "publicPath": "/nautilus_docs/17896441.1f866e35.js"
+          "file": "17896441.de929ca9.js",
+          "hash": "53304d3e4455920e4771",
+          "publicPath": "/nautilus_docs/17896441.de929ca9.js"
         }
       ]
     },
     "8": {
       "js": [
         {
-          "file": "1be78505.bb9a9388.js",
-          "hash": "7bf20d0b880317674e0b",
-          "publicPath": "/nautilus_docs/1be78505.bb9a9388.js"
+          "file": "1be78505.eba93745.js",
+          "hash": "2dd93f23636a530fe4b9",
+          "publicPath": "/nautilus_docs/1be78505.eba93745.js"
         }
       ]
     },
     "9": {
       "js": [
         {
-          "file": "2868cdab.71f2a46a.js",
-          "hash": "f2f8becf1d19521e9317",
-          "publicPath": "/nautilus_docs/2868cdab.71f2a46a.js"
+          "file": "2868cdab.31b0172c.js",
+          "hash": "42660429d8efb418279a",
+          "publicPath": "/nautilus_docs/2868cdab.31b0172c.js"
         }
       ]
     },
     "10": {
       "js": [
         {
-          "file": "3570154c.283c2596.js",
-          "hash": "706c87d489b74bc31e9d",
-          "publicPath": "/nautilus_docs/3570154c.283c2596.js"
+          "file": "3570154c.6e84da0c.js",
+          "hash": "336f3692125777296045",
+          "publicPath": "/nautilus_docs/3570154c.6e84da0c.js"
         }
       ]
     },
     "11": {
       "js": [
         {
-          "file": "39afa4a2.4e7cec58.js",
-          "hash": "0fed09cee2d4976187ae",
-          "publicPath": "/nautilus_docs/39afa4a2.4e7cec58.js"
+          "file": "39afa4a2.4a8e7065.js",
+          "hash": "620b1743c0847fccf0cd",
+          "publicPath": "/nautilus_docs/39afa4a2.4a8e7065.js"
         }
       ]
     },
     "12": {
       "js": [
         {
-          "file": "3e55316f.a3de71f1.js",
-          "hash": "0a233e6646dae2641cde",
-          "publicPath": "/nautilus_docs/3e55316f.a3de71f1.js"
+          "file": "3e55316f.ad2fd29e.js",
+          "hash": "56fd7263544ebdaeffac",
+          "publicPath": "/nautilus_docs/3e55316f.ad2fd29e.js"
         }
       ]
     },
     "13": {
       "js": [
         {
-          "file": "41f2fb3d.8202d458.js",
-          "hash": "6d80f148cddc11e0fc86",
-          "publicPath": "/nautilus_docs/41f2fb3d.8202d458.js"
+          "file": "41f2fb3d.6b431960.js",
+          "hash": "97e4af2f69c2f5d1287b",
+          "publicPath": "/nautilus_docs/41f2fb3d.6b431960.js"
         }
       ]
     },
     "14": {
       "js": [
         {
-          "file": "59985ac6.17a553bd.js",
-          "hash": "8234717ebad878a9e944",
-          "publicPath": "/nautilus_docs/59985ac6.17a553bd.js"
+          "file": "59985ac6.630c1a00.js",
+          "hash": "272acef70a6893fc87cc",
+          "publicPath": "/nautilus_docs/59985ac6.630c1a00.js"
         }
       ]
     },
     "15": {
       "js": [
         {
-          "file": "5a8a0b4c.d314d4fb.js",
-          "hash": "7441a39b1c54420e3c00",
-          "publicPath": "/nautilus_docs/5a8a0b4c.d314d4fb.js"
+          "file": "5a8a0b4c.b8370545.js",
+          "hash": "89976d084f6c2962daae",
+          "publicPath": "/nautilus_docs/5a8a0b4c.b8370545.js"
         }
       ]
     },
     "16": {
       "js": [
         {
-          "file": "6875c492.99476e73.js",
-          "hash": "3009d668c371cf3628d5",
-          "publicPath": "/nautilus_docs/6875c492.99476e73.js"
+          "file": "6875c492.dbd93245.js",
+          "hash": "af41e89f6eab0e352420",
+          "publicPath": "/nautilus_docs/6875c492.dbd93245.js"
         }
       ]
     },
     "17": {
       "js": [
         {
-          "file": "79d5c08f.5a482ea1.js",
-          "hash": "48f48a79cc6932080881",
-          "publicPath": "/nautilus_docs/79d5c08f.5a482ea1.js"
+          "file": "79d5c08f.fa49ccc3.js",
+          "hash": "b11532446d6658fcfec4",
+          "publicPath": "/nautilus_docs/79d5c08f.fa49ccc3.js"
         }
       ]
     },
     "18": {
       "js": [
         {
-          "file": "8e9f0a8a.8fc45def.js",
-          "hash": "f15b9293e79305a7b458",
-          "publicPath": "/nautilus_docs/8e9f0a8a.8fc45def.js"
+          "file": "8e9f0a8a.6beb4ec8.js",
+          "hash": "dd4ca31005bb1e3e4981",
+          "publicPath": "/nautilus_docs/8e9f0a8a.6beb4ec8.js"
         }
       ]
     },
     "19": {
       "js": [
         {
-          "file": "92bb876c.43a3603b.js",
-          "hash": "7aab9643d4038662de0f",
-          "publicPath": "/nautilus_docs/92bb876c.43a3603b.js"
+          "file": "92bb876c.23940184.js",
+          "hash": "4660bb6dd952c83aac41",
+          "publicPath": "/nautilus_docs/92bb876c.23940184.js"
         }
       ]
     },
     "20": {
       "js": [
         {
-          "file": "a6aa9e1f.f6e5637c.js",
-          "hash": "7020fedc158c2423bbc6",
-          "publicPath": "/nautilus_docs/a6aa9e1f.f6e5637c.js"
+          "file": "a6aa9e1f.93165d06.js",
+          "hash": "9393302eb98e42b2974e",
+          "publicPath": "/nautilus_docs/a6aa9e1f.93165d06.js"
         }
       ]
     },
     "21": {
       "js": [
         {
-          "file": "af172acd.37f8c0e8.js",
-          "hash": "78c6f90e71d2ebbbbbb7",
-          "publicPath": "/nautilus_docs/af172acd.37f8c0e8.js"
+          "file": "a8cead97.8b0efb34.js",
+          "hash": "d7eeeb1be37c024601a4",
+          "publicPath": "/nautilus_docs/a8cead97.8b0efb34.js"
         }
       ]
     },
     "22": {
       "js": [
         {
-          "file": "bdd709f1.c38f7266.js",
-          "hash": "ffd5d8eb2130a141d36a",
-          "publicPath": "/nautilus_docs/bdd709f1.c38f7266.js"
+          "file": "af172acd.12791aea.js",
+          "hash": "417eac0918db00f4d889",
+          "publicPath": "/nautilus_docs/af172acd.12791aea.js"
         }
       ]
     },
     "23": {
       "js": [
         {
-          "file": "c4f5d8e4.acd1448a.js",
-          "hash": "4c74550e444e4b49af12",
-          "publicPath": "/nautilus_docs/c4f5d8e4.acd1448a.js"
+          "file": "bdd709f1.37a95df9.js",
+          "hash": "29421f89ac787bbc9b3e",
+          "publicPath": "/nautilus_docs/bdd709f1.37a95df9.js"
         }
       ]
     },
     "24": {
       "js": [
         {
-          "file": "cc0087ba.58ef0520.js",
-          "hash": "9fd723a0a3f15c33195b",
-          "publicPath": "/nautilus_docs/cc0087ba.58ef0520.js"
+          "file": "c4f5d8e4.ef4acee7.js",
+          "hash": "63df1b633a1aee7c2c05",
+          "publicPath": "/nautilus_docs/c4f5d8e4.ef4acee7.js"
         }
       ]
     },
     "25": {
       "js": [
         {
-          "file": "ccc49370.fcd6d71a.js",
-          "hash": "7f59c61a449a9141921e",
-          "publicPath": "/nautilus_docs/ccc49370.fcd6d71a.js"
+          "file": "cc0087ba.a0de8c0e.js",
+          "hash": "c1067bfb96ecefd36f27",
+          "publicPath": "/nautilus_docs/cc0087ba.a0de8c0e.js"
         }
       ]
     },
     "26": {
       "js": [
         {
-          "file": "d4f222fb.bcd9e448.js",
-          "hash": "986ece3604a4a6f6d551",
-          "publicPath": "/nautilus_docs/d4f222fb.bcd9e448.js"
+          "file": "ccc49370.2aedcfa5.js",
+          "hash": "a75269f902073c3369e9",
+          "publicPath": "/nautilus_docs/ccc49370.2aedcfa5.js"
         }
       ]
     },
     "27": {
       "js": [
         {
-          "file": "d610846f.648e288f.js",
-          "hash": "0e58660f47ee14c4f8b3",
-          "publicPath": "/nautilus_docs/d610846f.648e288f.js"
+          "file": "d4f222fb.21e7aec0.js",
+          "hash": "1288642ce072d088733d",
+          "publicPath": "/nautilus_docs/d4f222fb.21e7aec0.js"
         }
       ]
     },
     "28": {
       "js": [
         {
-          "file": "e5621eb0.6e360180.js",
-          "hash": "4ea1887cb44e48b949d4",
-          "publicPath": "/nautilus_docs/e5621eb0.6e360180.js"
+          "file": "d610846f.e3c78754.js",
+          "hash": "639d35bd92354003dd37",
+          "publicPath": "/nautilus_docs/d610846f.e3c78754.js"
         }
       ]
     },
     "29": {
       "js": [
         {
-          "file": "f6850289.48823f23.js",
-          "hash": "25d473657514d7ad47fb",
-          "publicPath": "/nautilus_docs/f6850289.48823f23.js"
+          "file": "e5621eb0.5c1e5273.js",
+          "hash": "629f05b1364ec0b8d423",
+          "publicPath": "/nautilus_docs/e5621eb0.5c1e5273.js"
         }
       ]
     },
     "30": {
       "js": [
         {
-          "file": "main.5e896d15.js",
-          "hash": "7db0a458b45a783f8f60",
-          "publicPath": "/nautilus_docs/main.5e896d15.js"
+          "file": "f6850289.a763d70b.js",
+          "hash": "ddeafefebb2eb351f382",
+          "publicPath": "/nautilus_docs/f6850289.a763d70b.js"
         }
       ]
     },
     "31": {
       "js": [
         {
-          "file": "runtime~main.a48ee067.js",
-          "hash": "5ffd7592372ef9518478",
-          "publicPath": "/nautilus_docs/runtime~main.a48ee067.js"
+          "file": "main.883ff5bd.js",
+          "hash": "4f61bf4e2a768993f622",
+          "publicPath": "/nautilus_docs/main.883ff5bd.js"
         }
       ]
     },
     "32": {
       "js": [
         {
-          "file": "32.08bfd9a5.js",
-          "hash": "133324bb141ca9cb4c8b",
-          "publicPath": "/nautilus_docs/32.08bfd9a5.js"
+          "file": "runtime~main.9c6a5713.js",
+          "hash": "7034f903a44060b68499",
+          "publicPath": "/nautilus_docs/runtime~main.9c6a5713.js"
+        }
+      ]
+    },
+    "33": {
+      "js": [
+        {
+          "file": "33.66fa1322.js",
+          "hash": "8d14ad1df810ab8f7ed4",
+          "publicPath": "/nautilus_docs/33.66fa1322.js"
         }
       ]
     }

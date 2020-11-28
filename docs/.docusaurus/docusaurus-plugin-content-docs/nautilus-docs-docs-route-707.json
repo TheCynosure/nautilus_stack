@@ -29,6 +29,11 @@
             "type": "link",
             "label": "Write your own Config",
             "href": "/nautilus_docs/docs/write_config"
+          },
+          {
+            "type": "link",
+            "label": "Running Example Bags",
+            "href": "/nautilus_docs/docs/running_example_bags"
           }
         ]
       },
@@ -50,6 +55,7 @@
     "/nautilus_docs/docs/getting_started": "sidebar",
     "/nautilus_docs/docs/install_nautilus": "sidebar",
     "/nautilus_docs/docs/run_nautilus": "sidebar",
+    "/nautilus_docs/docs/running_example_bags": "sidebar",
     "/nautilus_docs/docs/vectorize": "sidebar",
     "/nautilus_docs/docs/write_config": "sidebar"
   }

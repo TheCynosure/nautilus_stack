@@ -16,6 +16,7 @@ export default {
   '8e9f0a8a': [() => import(/* webpackChunkName: '8e9f0a8a' */ "@site/blog/2019-05-28-hola.md?truncated=true"), "@site/blog/2019-05-28-hola.md?truncated=true", require.resolveWeak("@site/blog/2019-05-28-hola.md?truncated=true")],
   '92bb876c': [() => import(/* webpackChunkName: '92bb876c' */ "@site/docs/getting_started.md"), "@site/docs/getting_started.md", require.resolveWeak("@site/docs/getting_started.md")],
   'a6aa9e1f': [() => import(/* webpackChunkName: 'a6aa9e1f' */ "@theme/BlogListPage"), "@theme/BlogListPage", require.resolveWeak("@theme/BlogListPage")],
+  'a8cead97': [() => import(/* webpackChunkName: 'a8cead97' */ "@site/docs/running_example_bags.mdx"), "@site/docs/running_example_bags.mdx", require.resolveWeak("@site/docs/running_example_bags.mdx")],
   'af172acd': [() => import(/* webpackChunkName: 'af172acd' */ "@site/blog/2019-05-30-welcome.md?truncated=true"), "@site/blog/2019-05-30-welcome.md?truncated=true", require.resolveWeak("@site/blog/2019-05-30-welcome.md?truncated=true")],
   'bdd709f1': [() => import(/* webpackChunkName: 'bdd709f1' */ "@site/blog/2019-05-28-hola.md"), "@site/blog/2019-05-28-hola.md", require.resolveWeak("@site/blog/2019-05-28-hola.md")],
   'c4f5d8e4': [() => import(/* webpackChunkName: 'c4f5d8e4' */ "@site/src/pages/index.js"), "@site/src/pages/index.js", require.resolveWeak("@site/src/pages/index.js")],

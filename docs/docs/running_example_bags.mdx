@@ -1,0 +1,167 @@
+---
+id: running_example_bags
+title: Running Example Bags
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+
+Here is a collection of example bags and how to run them and the expected results you should get after the initial optimization using Nautilus. Good luck!
+
+__These tutorials assume you have already installed and have Nautilus up and running__
+
+### Downloading the example files:
+
+All the files needed for the examples are in the following [github repository.](https://github.com/TheCynosure/nautilus_examples)
+
+Clone this outside your catkin workspace which you should have created before installing nautilus.
+
+```
+git clone git@github.com:TheCynosure/nautilus_examples.git
+```
+
+:::note
+Whenever you see two angled brackets like <catkin_ws> this means to replace this part with the path to this folder, and remove the angle brackets. For example, on my computer catkin_ws is a folder inside my home directory so I would replace <catkin_ws> with ```~/catkin_ws```.
+:::
+
+### General Tutorial Structure:
+
+Nautilus requires three things to run for most tutorials. It needs a [bag file](http://wiki.ros.org/Bags) with your data from running your robot. Then it requires a configuration file written in lua that specifies the location of the bag and the topics inside the bag, [more on that here](write_config.mdx). Lastly, a launch file that specifies the location of the config file.
+
+### CMU Cobot Bag:
+
+The CMU Cobot Bag is a bag that was collected at Carnegie Mellon University on the Cobot. It exhibits poor LiDAR but good odometry. To run this bag first create a data folder inside the nautilus repository if not yet already created:
+
+```
+cd <catkin_ws>/src/nautilus_stack/nautilus
+mkdir data
+```
+
+Now we need to move the CMU Cobot bag into this folder.
+
+```
+cp <nautilus_examples>/bags/cmu-cobot.bag data/
+```
+
+The bag is now in the right location and we should create a configuration file for this specific robot, there is an already made configuration file named ```<nautilus_examples>/config/cmu_cobot_config.lua``` but we will explain it here first.
+
+First, let's copy it into the correct directory.
+
+```
+cp <nautilus_examples>/configs/cmu_cobot_config.lua configs/
+```
+
+This is what the config looks like:
+
+```
+dofile(debug.getinfo(1).source:match("@?(.*/)") .. '/default_config.lua')
+bag_path="data/cmu-cobot.bag"          
+lidar_topic="laser"              
+odom_topic="odom"
+auto_lc=false
+pose_number=1000
+```
+
+And now I will explain these lines one by one:
+
+```
+dofile(debug.getinfo(1).source:match("@?(.*/)") .. '/default_config.lua')
+```
+
+This line includes the ```default_config.lua``` file which contains the default values for many of the parameters of nautilus. All of these are describes in [the config parameters API documentation.](config_params.mdx) Although, only a few should be changed for a basic bag file.
+
+```
+bag_path="data/cmu-cobot.bag"
+```
+
+This is the path to the bag relative to the root of ```nautilus_stack/nautilus```.
+
+```
+lidar_topic="laser"
+odom_topic="odom"
+```
+
+These are the topics for the LiDAR and odometry data respectively. How to get these values is explained in [the write your own config tutorial](write_config.mdx).
+
+```
+auto_lc=false
+```
+
+This tells nautilus not to perform automatic loop closure after the initial optimization. This feature is currently being rebuilt and is unstable, so don't use it.
+
+```
+pose_number=1000
+```
+
+This means to collect up to 1000 poses from the bag file. If there are less then it will collect all possible poses. Poses are collected from the bag when there is sufficient movement between LiDAR scans to warrant adding that scan to the map. The pose is the center of the scan usually.
+
+Now that we have copied the bag and the config into the correct locations we are ready to write a launch file. A launch file is just a file that allows ROS to launch all the nodes needed for a program. Let's copy the example launch file into the right location.
+
+```
+cp <nautilus_examples>/launch/run_cmu_cobot.launch <catkin_ws>/src/nautilus_stack/launch
+```
+
+This file is not important to look at, the only change that is needed between bag files is the config name on line 2.
+
+Now we are finally as set to run the example! To run simply run the following commands and wait for output in RViz.
+
+```
+cd <catkin_ws>
+catkin_make
+source devel/setup.sh
+roslaunch src/nautilus_stack/launch/run_cmu_cobot.launch
+```
+
+After running that RViz will open and in a couple seconds you should see output like the following, this is the optimized map.
+
+<img alt="CMU Cobot Initial Optimization Results" src={useBaseUrl('img/cmu-cobot-results.png')}/>
+
+This of course still needs loop closure. You can learn how to apply Human-In-The-Loop Loop Closure in the [run nautilus tutorial](run_nautilus.mdx).
+
+### Jackal 2020 Bag
+
+If you skipped the above tutorial and need more explanation on any of these files then read the CMU Cobot Bag tutorial first. Then come back and copy all the files.
+
+The Jackal is a robot with poor odometry but good LiDAR. We start by copying all the files to their proper location froms the example folder.
+
+```
+cp <nautilus_examples>/bags/jackal-2020.bag <catkin_ws>/src/nautilus_stack/nautilus/data/
+cp <nautilus_examples>/configs/jackal_2020_config.lua <catkin_ws>/src/nautilus_stack/nautilus/config
+cp <nautilus_examples>/launch/run_jackal_2020.laucnh <catkin_ws>/src/nautilus_stack/launch/
+```
+
+Then to run use just navigate to the catkin_ws root and use roslaunch like so:
+
+```
+cd <catkin_ws>
+roslaunch src/nautilus_stack/launch/run_jackal_2020.launch
+```
+
+You should get results like the following:
+
+<img alt="Jackal 2020 Results Initial Optimization" src={useBaseUrl('img/jackal-2020-results.png')}/>
+
+### UT Automata Bag:
+
+Again, if you have not done the CMU Cobot Bag tutorial above then I would suggest you do it so you know why we have these three separate files and what they each do. The UT Automata are small RC Cars that have short range LiDAR and poor odometry.
+
+First we have to copy all the relevant files.
+
+```
+cp <nautilus_examples>/bags/ut-automata.bag <catkin_ws>/src/nautilus_stack/nautilus/data/
+cp <nautilus_examples>/configs/ut_automata_config.lua <catkin_ws>/src/nautilus_stack/nautilus/config
+cp <nautilus_examples>/launch/run_ut_automata.laucnh <catkin_ws>/src/nautilus_stack/launch/
+```
+
+Then you run the program like before:
+
+```
+cd <catkin_ws>
+roslaunch src/nautilus_stack/launch/run_ut_automata.launch
+```
+
+Then you should get results like this:
+<img alt="UT Automata Results Initial Optimization" src={useBaseUrl('img/ut-automata-results.png')}/>
+
+This will also need HITL loop closure as mentioned in the CMU Cobot Tutorial. This is because the loop is not connecting back to the place it initially started due to odometry drift and there are no constraints added automatically (as of now) to correct for this. Refer to the [run nautilus tutorial](run_nautilus.mdx) to see how to use HITL loop closure in nautilus.
+

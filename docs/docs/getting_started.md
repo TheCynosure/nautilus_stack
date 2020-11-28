@@ -16,3 +16,7 @@ title: Getting Started
 3. [Generate a Vector Map](vectorize.mdx)
 
 4. [Write your own config file](write_config.mdx)
+
+## Other Examples
+
+* [Running Example Bags](running_example_bags)
